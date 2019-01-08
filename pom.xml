@@ -13,10 +13,26 @@
 		<spring.social.version>2.0.0.M4</spring.social.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>org.springframework.maven.snapshot</id>
+			<name>Spring Maven Snapshot Repository</name>
+			<url>http://repo.spring.io/snapshot</url>
+		</repository>
+	</repositories>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
 
@@ -40,6 +56,11 @@
 			<artifactId>spring-social-security</artifactId>
 			<version>${spring.social.version}</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+    </dependencies>
 
 </project>
