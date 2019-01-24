@@ -23,6 +23,7 @@ public class YandexAdapter implements ApiAdapter<Yandex> {
     public void setConnectionValues(Yandex yandex, ConnectionValues connectionValues) {
         User user = yandex.userOperations().getUserProfile();
 
+        connectionValues.setProviderUserId(user.getId());
         connectionValues.setDisplayName(user.getDisplayName());
         if (hasText(user.getAvatarId())) {
             String avatarApiUrl = yandex.env().getAvatarApiUrl();
